@@ -14,11 +14,12 @@ jobs:
       run: | 
         $file="files/${{ github.event.issue.number }}.md"
 
+        mkdir -p files
         touch $file
         echo "# Title" >> $file
         echo "" >> $file
         echo "${{ github.event.issue.body }}"
-        
+
     - name: Commit new issue
       uses: stefanzweifel/git-auto-commit-action@v4
       id: auto-commit-action

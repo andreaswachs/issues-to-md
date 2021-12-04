@@ -19,7 +19,7 @@ jobs:
         touch $file
         echo "# Title" >> $file
         echo "" >> $file
-        echo "${{ github.event.issue.body }}"
+        echo "${{ github.event.issue.body }}" >> $file
 
     - name: Commit new issue
       uses: stefanzweifel/git-auto-commit-action@v4

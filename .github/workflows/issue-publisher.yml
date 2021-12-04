@@ -15,7 +15,10 @@ jobs:
       run: | 
         file="files/${{ github.event.issue.number }}.md"
 
+        # Proper sanitation: ensure directory exists and remove file if already there
         mkdir -p files
+        rm $file || true
+        
         touch $file
         echo "# Title" >> $file
         echo "" >> $file

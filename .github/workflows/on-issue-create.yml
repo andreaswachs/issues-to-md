@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Create file
       run: | 
-        $file="files/${{ github.event.issue.number }}.md"
+        file="files/${{ github.event.issue.number }}.md"
 
         mkdir -p files
         touch $file
